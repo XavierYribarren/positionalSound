@@ -1,9 +1,34 @@
-.import-menu{
+.import-menu {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  /* background-color: aqua; */
   height: 100%;
   align-items: center;
-   padding: 1em;
+  padding: 1em;
+}
+
+.file-input-hidden {
+  display: none;
+}
+
+.file-select-btn {
+  width: 100%;
+  padding: 0.4em 0.8em;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  color: #eee;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.file-select-btn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.file-select-btn:disabled {
+  opacity: 0.4;
+  cursor: default;
 }

@@ -1,7 +1,26 @@
+:root {
+  /* TrackConsole — colors */
+  --tc-text:              #eee;
+  --tc-panel-bg:          #222;
+  --tc-strip-bg:          #ebebebfb; 
+  --tc-panel-shadow:      rgba(0, 0, 0, 0.3);
+  --tc-btn-shadow-dark:   rgba(136, 135, 135, 0.521);
+  --tc-btn-shadow-light:  rgba(170, 170, 170, 0.671);
+  --tc-import-border:     rgba(245, 245, 245, 0.315);
+  --tc-disabled-color:    rgb(80, 80, 80);
+
+  /* TrackConsole — border radii */
+  --tc-radius-strip:      2px;
+  --tc-radius-import:     2px;
+  --tc-radius-panel:      2px;
+}
+
 .track-strip {
   height: 100%;
   display: flex;
   align-items: center;
+  border-radius: var(--tc-radius-strip);
+  background-color: var(--tc-strip-bg);
 }
 
 .track-strip-inner {
@@ -13,8 +32,9 @@
 
   min-width: fit-content;
   height: 90%;
-  color: #eee;
-  border-radius: 6px;
+  color: var(--tc-text);
+  border-radius: var(--tc-radius-strip);
+  background-color: var(--tc-strip-bg);
 }
 
 .slider-buttons {
@@ -42,8 +62,8 @@
   width: 2rem;
 
   padding: 0.2em;
-  box-shadow: rgba(0, 0, 0, 0.521) 0 1px 2px 1px,
-    rgba(116, 116, 116, 0.671) 0 2px 3px 2px;
+  box-shadow: var(--tc-btn-shadow-dark) 0 1px 2px 1px,
+    var(--tc-btn-shadow-light) 0 2px 3px 2px;
 }
 
 .slider-buttons > .buttons > button:focus {
@@ -87,8 +107,8 @@
   /* background-color: aqua; */
   height: 80%;
   margin-left: 2em;
-  border: rgba(245, 245, 245, 0.315) solid 2px;
-  border-radius: 12px;
+  border: var(--tc-import-border) solid 2px;
+  border-radius: var(--tc-radius-import);
 }
 
 .drag-handle {
@@ -111,10 +131,10 @@
 
   transition: transform 0.15s ease-out, opacity 0.15s ease-out;
   opacity: 0;
-  background: #222;
+  background: var(--tc-panel-bg);
   padding: 0.4rem;
-  border-radius: 4px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  border-radius: var(--tc-radius-panel);
+  box-shadow: 0 2px 8px var(--tc-panel-shadow);
   z-index: 10;
 }
 
@@ -134,10 +154,10 @@
   transform: translateX(-50%) scaleY(0);
   transition: transform 0.15s ease-out, opacity 0.15s ease-out;
   opacity: 0;
-  background: #222;
+  background: var(--tc-panel-bg);
   padding: 0.4rem;
-  border-radius: 4px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  border-radius: var(--tc-radius-panel);
+  box-shadow: 0 2px 8px var(--tc-panel-shadow);
   z-index: 10;
 }
 
@@ -161,10 +181,10 @@
   transform: translateX(-50%) scaleY(0);
   transition: transform 0.15s ease-out, opacity 0.15s ease-out;
   opacity: 0;
-  background: #222;
+  background: var(--tc-panel-bg);
   padding: 0.4rem;
-  border-radius: 4px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  border-radius: var(--tc-radius-panel);
+  box-shadow: 0 2px 8px var(--tc-panel-shadow);
   z-index: 10;
 }
 
@@ -184,5 +204,5 @@
 .pan.disabled {
   pointer-events: none;
   opacity: 0.8;
-  color: rgb(80, 80, 80);
+  color: var(--tc-disabled-color);
 }

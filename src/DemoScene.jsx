@@ -375,7 +375,7 @@ export default function DemoScene() {
         reverbLowPass.connect(reverbGain);
         reverbGain.connect(listener.getInput());
       })
-      .catch((err) => console.error('IR load error:', err));
+      .catch(() => {});
   }, [
     audioCtx,
     convolver,
@@ -440,15 +440,11 @@ export default function DemoScene() {
   const handlePlayClick = () => {
     // 1) fullscreen right away
     if (isMobile && containerRef.current?.requestFullscreen) {
-      containerRef.current.requestFullscreen().catch((err) => {
-        console.warn('Fullscreen failed:', err);
-      });
+      containerRef.current.requestFullscreen().catch(() => {});
       // 2) orientation lock will only work once in fullscreen,
       //    but calling it here is fine—in some browsers it’ll queue up
       if (screen.orientation?.lock) {
-        screen.orientation.lock('landscape').catch((err) => {
-          console.warn('Orientation lock failed:', err);
-        });
+        screen.orientation.lock('landscape').catch(() => {});
       }
     }
     // 3) immediately start audio
@@ -681,10 +677,6 @@ export default function DemoScene() {
 
   const allLoaded = percent === 100
 
-  console.log(
-    trackList.map((t) => ({ id: t.id, loaded: !!t.buffer })),
-    `→ ${loadedCount}/${totalCount} = ${percent}%`
-  );
   return (
     <div ref={containerRef} style={{ height: '100vh', position: 'relative' }}>
     {portrait && isMobile && playing && (

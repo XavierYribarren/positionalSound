@@ -38,7 +38,6 @@ export default function MasterControls({ masterGain, analyser }) {
     const now = typeof audioCtx.currentTime === 'number'
       ? audioCtx.currentTime
       : 0;
-console.log(masterGain)
     masterGain.gain.setValueAtTime(v, now);
   };
 

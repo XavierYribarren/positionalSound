@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import './css/TrackConsole.css'; // You'll create this for styling
+import './css/TrackConsole.css'; 
 import { useDispatch, useSelector } from 'react-redux';
 import {
   addTrack,
@@ -84,7 +84,7 @@ export function SortableTrackRow({
       {/* ------ REST OF THE ROW CONTENT ------ */}
       <div
         className='track-strip-inner'
-        style={{ backgroundColor: `${trackSettings.color || '#88ccff'}c0` }}
+        style={{ '--tc-strip-bg': `${trackSettings.color || '#88ccff'}c0` }}
       >
         {' '}
         <div
@@ -103,8 +103,6 @@ export function SortableTrackRow({
             step={0.01}
             value={trackSettings.volume || 0}
             onChange={(e, value) => {
-              // value is already a number
-              console.log(value)
               dispatch(setVolume({ trackId: track.id, volume: value }));
             }}
             className='track-slider'
@@ -321,7 +319,7 @@ export default function TrackConsole({
                 key={track.id}
                 className='track-strip'
                 style={{
-                  backgroundColor: `${trackSettings.color || '#88ccff'}c0`,
+                  '--tc-strip-bg': `${trackSettings.color || '#88ccff'}c0`,
                 }}
               >
                 <div className='slider-buttons'>

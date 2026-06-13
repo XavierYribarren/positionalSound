@@ -39,7 +39,7 @@ export default function Intro() {
     MODELS.forEach(useGLTF.preload);
     useTexture.preload(TEXTURES);
   }, []);
-console.log(isMobile)
+
   // When loading is done, mark preloaded
   useEffect(() => {
     if (total > 0 && loaded >= total) {

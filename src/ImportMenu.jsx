@@ -46,7 +46,15 @@ export default function ImportMenu({
         multiple
         disabled={disabled}
         onChange={handleFileChange}
+        className="file-input-hidden"
       />
+      <button
+        className="file-select-btn"
+        onClick={() => fileInputRef.current?.click()}
+        disabled={disabled}
+      >
+        {files.length ? `${files.length} file${files.length > 1 ? 's' : ''} selected` : 'Choose files'}
+      </button>
       <div className="import-buttons">
 
       <button

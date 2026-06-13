@@ -40,8 +40,7 @@ export default function Waveform({ file, width = 600, height = 30 }) {
           const barHeight = (val / maxVal) * height / 5;
           ctx.fillRect(i, height - barHeight, 1, barHeight);
         });
-      } catch (err) {
-        console.error('Waveform draw error', err);
+      } catch {
       }
     };
 

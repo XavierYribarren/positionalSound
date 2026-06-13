@@ -1,10 +1,10 @@
-import React, { Suspense, useEffect, useRef } from 'react';
+import React, { Suspense } from 'react';
 import { Canvas, useThree } from '@react-three/fiber';
 import { Perf } from 'r3f-perf';
 import { OrbitControls, TransformControls } from '@react-three/drei';
 import EnvComp from './EnvComp';
 import ObjSound from './ObjSound';
-import { proxy, useSnapshot } from 'valtio';
+import { useSnapshot } from 'valtio';
 import { sceneState as state } from './utils/sceneState';
 
 const modes = ['translate', 'rotate', 'scale'];
@@ -35,8 +35,6 @@ function Controls() {
 }
 
 export default function Scene({ tracks, globalPlay, playTrigger, masterGain, reverbNode }) {
-
-  console.log(tracks)
   return (
     <Canvas  dpr={[1, 2]} shadows>
       {/* Lighting */}
@@ -64,7 +62,7 @@ export default function Scene({ tracks, globalPlay, playTrigger, masterGain, rev
               globalPlay={globalPlay}
               masterGain={masterGain}
               reverbNode={reverbNode}
-              onClick={() => console.log('CLICK')}
+              onClick={() => {}}
             />
           ))}
         </group>

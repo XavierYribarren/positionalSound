@@ -193,7 +193,7 @@ export default function App() {
         reverbLowPass.connect(reverbGain);
         reverbGain.connect(listener.getInput());
       })
-      .catch((err) => console.error('IR load error:', err));
+      .catch(() => {});
   }, [
     audioCtx,
     convolver,
@@ -472,8 +472,7 @@ async function handleImport(items) {
     if (activeNodesRef.current[trackId]) {
       try {
         activeNodesRef.current[trackId].stop();
-      } catch (e) {
-        console.warn('Failed to stop source node:', e);
+      } catch {
       }
       delete activeNodesRef.current[trackId];
     }
