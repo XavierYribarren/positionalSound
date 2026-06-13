@@ -31,14 +31,6 @@ import { BassSVTAmp } from './instruments/amps/BassSVTAmp';
 import { GuitarAmp } from './instruments/amps/GuitarAmp';
 import { Micro } from './instruments/mics/Micro';
 import { Keyboard } from './instruments/keyboard_other/Keyboard';
-import {
-  Bloom,
-  DepthOfField,
-  EffectComposer,
-  GodRays,
-  Noise,
-  Vignette,
-} from '@react-three/postprocessing';
 
 import { useSelector, useDispatch } from 'react-redux';
 import { setMode, toggleMode } from './reducer/viewModeSlice';
@@ -720,7 +712,7 @@ export default function DemoScene() {
                 camera={{ position: [10, 5, 20], fov: 35 }}
                 dpr={[1, 2]}
                 shadows
-                gl={{ antialias: true, preserveDrawingBuffer: true }}
+                gl={{ antialias: true }}
                 onCreated={({ gl }) => {
                   gl.shadowMap.enabled = true;
                   gl.shadowMap.type = THREE.PCFSoftShadowMap;

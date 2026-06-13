@@ -25,7 +25,8 @@ const ampMat = useMemo(() => new THREE.MeshStandardMaterial({map: ampCol, normal
  
           castShadow
           decay={1}
-    
+          shadow-camera-far={15}
+          shadow-mapSize={[256, 256]}
           />
       </group>
       <mesh

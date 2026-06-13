@@ -44,13 +44,8 @@ export const  BassSVTAmp = forwardRef((props, ref) => {
           // distance={120.5}
           castShadow
           decay={1.2}
-          // shadow-bias={-0.001}
-          // shadow-mapSize-width={1024}
-          // shadow-mapSize-height={1024}
-          // shadow-radius={1}
-          // shadow-camera-near={0.5} // move the near clipping plane
-          // shadow-camera-far={60}
-          // shadow-blurSamples={12}
+          shadow-camera-far={15}
+          shadow-mapSize={[256, 256]}
           />
       </group>
     </group>

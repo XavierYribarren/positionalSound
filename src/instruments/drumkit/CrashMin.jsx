@@ -15,10 +15,10 @@ export const CrashMin = forwardRef((props, ref) => {
   useMemo(() => {
     if (cymNormalMap) {
       cymNormalMap.flipY = false;
-      cymNormalMap.encoding = THREE.sRGBEncoding;
+      cymNormalMap.colorSpace = THREE.SRGBColorSpace;
     }
     if (cymEmissiveMap) {
-      cymEmissiveMap.encoding = THREE.sRGBEncoding;
+      cymEmissiveMap.colorSpace = THREE.SRGBColorSpace;
     }
   }, [cymNormalMap, cymEmissiveMap]);
   const cymbalMaterial = useMemo(() => {

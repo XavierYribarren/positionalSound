@@ -40,6 +40,8 @@ export const Micro = forwardRef((props, ref) => {
           angle={0.24}
           penumbra={0.42}
           distance={50}
+          shadow-camera-far={15}
+          shadow-mapSize={[256, 256]}
         />
       </group>
       <mesh

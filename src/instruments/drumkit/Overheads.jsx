@@ -1,5 +1,5 @@
 import React, { forwardRef, useMemo, useRef } from 'react';
-import { SpotLight, useDepthBuffer, useGLTF } from '@react-three/drei';
+import { useGLTF } from '@react-three/drei';
 import { drumkit } from './drumkitMaterials';
 import * as THREE from 'three'
 export const Overheads = forwardRef((props, ref) => {
